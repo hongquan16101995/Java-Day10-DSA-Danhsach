@@ -17,7 +17,6 @@ public class Test {
         linkerList.addLast(11);
         linkerList.add(2, 11);
         System.out.println("In List sau khi thêm: ");
-        linkerList.printList();
         System.out.println("Kiểm tra phần tử có hay khong: ");
         System.out.println(linkerList.contains(12));
         System.out.println("Trả về vị trí đầu tiên của phần tử: ");

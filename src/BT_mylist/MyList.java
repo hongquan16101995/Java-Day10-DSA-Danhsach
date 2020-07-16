@@ -22,7 +22,7 @@ public class MyList<E> {
 
     public void add(int index, E e) {
         size++;
-        for (int i = size-1; i > index; i--) {
+        for (int i = DEFAULT_CAPACITY-1; i > index; i--) {
             elements[i] = elements[i-1];
         }
         elements[index] = e;
@@ -98,8 +98,8 @@ public class MyList<E> {
     }
 
     public void print() {
-        for (int i = 0; i < size; i++) {
-            System.out.println(elements[i]);
+        for (int i = 0; i < DEFAULT_CAPACITY; i++) {
+            System.out.print((E)elements[i] + "\t");
         }
     }
 }

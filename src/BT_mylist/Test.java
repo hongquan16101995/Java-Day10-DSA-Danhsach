@@ -11,7 +11,7 @@ public class Test {
         myList.add1(5);
         myList.print();
         System.out.println("abc: ");
-        myList.add(3,10);
+        myList.add(7,10);
         myList.print();
     }
 }
