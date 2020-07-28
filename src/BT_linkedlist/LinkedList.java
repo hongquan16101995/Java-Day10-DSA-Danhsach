@@ -1,20 +1,20 @@
 package BT_linkedlist;
 
-public class LinkerList<E> {
+public class LinkedList<E> {
     private Node head;
-    private int numNodes;
+    private int size;
 
-    public LinkerList() {
+    public LinkedList() {
 
     }
 
-    public LinkerList(E data) {
+    public LinkedList(E data) {
         head = new Node(data);
-        numNodes++;
+        size++;
     }
 
-    public int getNumNodes() {
-        return numNodes;
+    public int getSize() {
+        return size;
     }
 
     public Node getHead() {
@@ -31,14 +31,14 @@ public class LinkerList<E> {
         holder = temp.next;
         temp.next = new Node(e);
         temp.next.next = holder;
-        numNodes++;
+        size++;
     }
 
     public void addFirst(E e) {
         Node temp = head;
         head = new Node(e);
         head.next = temp;
-        numNodes++;
+        size++;
     }
 
     public void addLast(E e) {
@@ -47,7 +47,7 @@ public class LinkerList<E> {
             temp = temp.next;
         }
         temp.next = new Node(e);
-        numNodes++;
+        size++;
     }
 
     public E remove(int index) {
@@ -58,13 +58,13 @@ public class LinkerList<E> {
         }
         holder = temp.next;
         temp.next = temp.next.next;
-        numNodes--;
+        size--;
         return (E) holder.getData();
     }
 
     public boolean remove1(E e) {
         Node temp = head;
-        for (int i = 0; i < numNodes; i++) {
+        for (int i = 0; i < size; i++) {
             if (temp.data == e) {
                 remove(i);
                 return true;
@@ -75,12 +75,12 @@ public class LinkerList<E> {
     }
 
     public int size() {
-        return getNumNodes();
+        return getSize();
     }
 
     public boolean contains(E e) {
         Node temp = head;
-        for (int i = 0; i < numNodes; i++) {
+        for (int i = 0; i < size; i++) {
             if (temp.data == e) {
                 return true;
             }
@@ -91,7 +91,7 @@ public class LinkerList<E> {
 
     public int indexOf(E e) {
         Node temp = head;
-        for (int i = 0; i < numNodes; i++) {
+        for (int i = 0; i < size; i++) {
             if (temp.data == e) {
                 return i;
             }
@@ -114,7 +114,7 @@ public class LinkerList<E> {
 
     public E getLast(){
         Node temp = head;
-        for (int j = 1; j < numNodes; j++){
+        for (int j = 1; j < size; j++){
             temp = temp.next;
         }
         return (E)temp.data;
